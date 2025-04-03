@@ -13,16 +13,13 @@ from django.shortcuts import render
 from store.models import Product, ReviewRating
 
 def home(request):
-    products = Product.objects.all().filter(is_available=True).order_by('created_date')
+    products = Product.objects.filter(is_available=True).order_by('created_date')
 
-    # Get the reviews
-    reviews = None
-    products = None
-    for product in products:
-        reviews = ReviewRating.objects.filter(product_id=product.id, status=True)
+    # Get reviews for all products
+    reviews_dict = {product.id: ReviewRating.objects.filter(product_id=product.id, status=True) for product in products}
 
     context = {
         'products': products,
-        'reviews': reviews,
+        'reviews': reviews_dict,
     }
     return render(request, 'home.html', context)
