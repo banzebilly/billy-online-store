@@ -25,7 +25,7 @@ urlpatterns = [
     #securing admin pane. record login attempts by duplicating the admin panel
     # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),p
     #we change the admin/ to secured_billy so that can not access admin panel
-    path('billy-store-login/', admin.site.urls),
+    path('billy-store/', admin.site.urls),
     #allauth url
     
     #my site urls
