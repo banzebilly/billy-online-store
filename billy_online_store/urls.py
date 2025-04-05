@@ -22,12 +22,10 @@ from django.conf import settings
 
 
 urlpatterns = [
+   path('mulopwe/', admin.site.urls),
     #securing admin pane. record login attempts by duplicating the admin panel
     # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),p
-    #we change the admin/ to secured_billy so that can not access admin panel
-    path('billy-store/', admin.site.urls),
-    #allauth url
-    
+    #we change the admin/ to secured_billy so that can not access admin pane
     #my site urls
     path('', views.home, name= 'home'),
     path('store/', include('store.urls')),
@@ -36,8 +34,6 @@ urlpatterns = [
     # ORDERS
     path('orders/', include('orders.urls')),
     
-    
-    path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
