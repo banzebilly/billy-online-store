@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ecommerce-env.eba-ccr73ymp.af-south-1.elasticbeanstalk.com']
 
 
 
@@ -164,7 +164,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Django messages configuration
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
-}
+} 
 
 # SMTP Configuration
 EMAIL_BACKEND = config('EMAIL_BACKEND')
