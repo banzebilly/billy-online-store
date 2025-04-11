@@ -76,8 +76,8 @@
                                 <td>
                                     <div class="price-wrap">
                                         <!--this will get you the price for all the cart cart item-->
-                                        <var class="price">${{cart_item.sub_total }}</var>
-                                        <small class="text-muted"> ${{cart_item.product.price}} each</small>
+                                        <var class="price">R {{cart_item.sub_total }}</var>
+                                        <small class="text-muted"> R {{cart_item.product.price}} each</small>
                                     </div> <!-- price-wrap .// -->
                                 </td>
                                 <td class="text-right">
@@ -96,16 +96,16 @@
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Total price:</dt>
-                            <dd class="text-right">$ {{total}}</dd>
+                            <dd class="text-right">R {{total}}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Tax:</dt>
-                            <dd class="text-right">$ {{tax }}</dd>
+                            <dd class="text-right">R {{tax }}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Grand Total:</dt>
                             <dd class="text-right text-dark b">
-                                <strong>$ {{grand_total}}</strong>
+                                <strong>RAND {{grand_total}}</strong>
                             </dd>
                         </dl>
                         <hr>
