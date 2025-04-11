@@ -10,3 +10,4 @@ Security is a top priority, with SSL certificate support ensuring encrypted comm
 The application is deployed on AWS Elastic Beanstalk, using Amazon S3 for managing static and media files, and Route 53 for DNS management. The deployment is managed under the "I Am" AWS IAM user account to maintain strict access control and deployment consistency.
 
 
+{ VISIT THE PROJECT}(banzebilly-ecommerce.co.za)
