@@ -183,7 +183,9 @@ STORAGES = {
         "BACKEND": "billy_online_store.storages_backends.StaticStorage",  # For static
     },
 }
-
+STATICFILES_DIRS = [
+    'billy_online_store/static',
+]
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
 MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 DEFAULT_FILE_STORAGE = 'billy_online_store.storages_backends.MediaStorage'
