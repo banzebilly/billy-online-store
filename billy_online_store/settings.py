@@ -161,30 +161,32 @@ USE_TZ = True
 #     BASE_DIR / 'billy_online_store/static',  # Add this if you have additional static files here
 # ]
 
-# AWS S3 Static Files Configuration
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = "af-south-1"
+
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
+AWS_QUERYSTRING_AUTH = False
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
+    "CacheControl": "max-age=86400",
 }
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = 'public-read'
-AWS_LOCATION = 'staticfiles'
 
+AWS_DEFAULT_ACL = None
 
-# Static files settings
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory to collect static files
-# Comment out if you're not using local static files:
-# STATICFILES_DIRS = ['billy_online_store/static']
+STORAGES = {
+    "default": {
+        "BACKEND": "billy_online_store.storages_backends.MediaStorage",  # For media
+    },
+    "staticfiles": {
+        "BACKEND": "billy_online_store.storages_backends.StaticStorage",  # For static
+    },
+}
 
-# Media files settings
-DEFAULT_FILE_STORAGE = 'billy_online_store.storage_backends.MediaStorage'
-MEDIA_URL = 'https://%s/media/' % AWS_S3_CUSTOM_DOMAIN
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+DEFAULT_FILE_STORAGE = 'billy_online_store.storages_backends.MediaStorage'
 
 # media files configuration
 MEDIA_URL = '/media/'
