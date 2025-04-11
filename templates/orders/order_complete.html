@@ -71,7 +71,7 @@
                                             <tr>
                                                 <td>{{item.product.product_name}}</td>
                                                 <td class="text-center">{{item.Quantity}}</td>
-                                                <td class="text-center">r {{item.product_price}} RAND</td>
+                                                <td class="text-center">$ {{item.product_price}} USD</td>
                                             </tr>
                                             {% endfor %}
                                          
@@ -79,14 +79,14 @@
                                         <tfoot>
                                             <tr>
                                                 <th colspan="2" class="text-right">Sub Total:</th>
-                                                <th class="text-center">R {{ subtotal }} RAND</th>
+                                                <th class="text-center">$ {{ subtotal }} USD</th>
                                             </tr>
                                                 <th colspan="2" class="text-right">Tax:</th>
-                                                <th class="text-center">R {{order.tax }} RAND</th>
+                                                <th class="text-center">$ {{order.tax }} USD</th>
                                             </tr>
                                             </tr>
                                                 <th colspan="2" class="text-right">Grand Total:</th>
-                                                <th class="text-center">R {{order.order_total}} RAND</th>
+                                                <th class="text-center">$ {{order.order_total}} USD</th>
                                             </tr>
                                           
                                         </tfoot>

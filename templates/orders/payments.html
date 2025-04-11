@@ -70,7 +70,7 @@
                                     <td>
                                         <div class="price-wrap">
                                             <var class="price"> {{ cart_item.sub_total }}</var>
-                                            <small class="text-muted"> R {{ cart_item.product.price }} each </small>
+                                            <small class="text-muted"> $ {{ cart_item.product.price }} each </small>
                                         </div>
                                     </td>
                                 </tr>
@@ -86,15 +86,15 @@
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Total price:</dt>
-                            <dd class="text-right">R {{ total }}</dd>
+                            <dd class="text-right">$ {{ total }}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Tax:</dt>
-                            <dd class="text-right">R {{ tax }}</dd>
+                            <dd class="text-right">$ {{ tax }}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Grand Total:</dt>
-                            <dd class="text-right text-dark b"><strong>R {{ grand_total }}</strong></dd>
+                            <dd class="text-right text-dark b"><strong>$ {{ grand_total }}</strong></dd>
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
