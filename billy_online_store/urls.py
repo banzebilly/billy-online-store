@@ -24,7 +24,7 @@ from django.conf import settings
 urlpatterns = [
    
     #securing admin pane. record login attempts by duplicating the admin panel
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     #we change the admin/ to secured_billy so that can not access admin pane
     path('mulopwe/', admin.site.urls),
     #my site urls
