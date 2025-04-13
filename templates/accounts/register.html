@@ -1,85 +1,64 @@
-
 {% extends 'base.html' %}
-{% load static %}
- 
+
+
 {% block content %}
-<!-- ========================= SECTION CONTENT ========================= -->
+
 <section class="section-content padding-y">
 
-    <!-- ============================ COMPONENT REGISTER   ================================= -->
-    <div class="card mx-auto" style="max-width:520px; margin-top:40px; 
-         box-shadow: 9px 9px 16px rgba(163,177,198,0.6), -9px -9px 16px rgba(255,255,255,0.5) !important;">
-        <article class="card-body">
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+	<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+      <article class="card-body">
+    {% include 'includes/alert.html' %}
+		<header class="mb-4"><h4 class="card-title">Sign up</h4></header>
+		<form action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
 
-            {% include 'includes/alert.html'%}
-            
-            <h4 class="card-title mb-4 text-center text-primary p-2">Register <i class="fas fa-user-plus" style="color: blue;"></i></h4>
-            <form action="{% url 'register'%}" method="POST" class="p-2 m-2">
-                {% csrf_token %}
-                <div class="form-row p-2">
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.first_name }}
-                        </div>
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.last_name }}
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row p-2">
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-phone" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.phone_number }}
-                        </div>
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-envelope" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.email }}
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row p-2">
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-lock" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.password }}
-                        </div>
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-lock" style="color: blue;"></i></span>
-                            </div>
-                            {{ form.confirm_password }}
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
-                </div>
-                {{ form.email.errors }}
-                {{ form.non_field_errors }}
-            </form>
-        </article><!-- card-body.// -->
+
+				<div class="form-row">
+					<div class="col form-group">
+						<label>First name</label>
+					  	{{ form.first_name }}
+					</div> <!-- form-group end.// -->
+					<div class="col form-group">
+						<label>Last name</label>
+					  	{{ form.last_name }}
+					</div> <!-- form-group end.// -->
+				</div> <!-- form-row end.// -->
+
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+					  <label>Email Address</label>
+					  {{form.email}}
+					</div> <!-- form-group end.// -->
+					<div class="form-group col-md-6">
+					  <label>Phone Number</label>
+					  {{form.phone_number}}
+					</div> <!-- form-group end.// -->
+				</div> <!-- form-row.// -->
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label>Create password</label>
+					    {{ form.password }}
+					</div> <!-- form-group end.// -->
+					<div class="form-group col-md-6">
+						<label>Repeat password</label>
+            {{form.confirm_password}}
+					</div> <!-- form-group end.// -->
+				</div>
+			    <div class="form-group">
+			        <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+			    </div> <!-- form-group// -->
+      {{ form.email.errors }}
+      {{ form.non_field_errors }}
+			</form>
+		</article><!-- card-body.// -->
     </div> <!-- card .// -->
     <p class="text-center mt-4">Have an account? <a href="{% url 'login' %}">Log In</a></p>
     <br><br>
-    <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+
 </section>
+
 {% endblock %}
