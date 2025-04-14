@@ -209,7 +209,8 @@ def forgot_password(request):
            
     return render(request, 'accounts/forgot_password.html')
 
-#============reset password validations=========================================
+#============reset password validations========================================so
+
 def reset_password_validate(request, uidb64, token):
     
     try:
