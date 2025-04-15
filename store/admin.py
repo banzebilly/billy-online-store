@@ -38,10 +38,13 @@ class VariationAdmin(admin.ModelAdmin):
     
 
 
+class SubscriberAdmin (admin.ModelAdmin):
+    list_display = ('email',)
 
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Variation, VariationAdmin )
 admin.site.register(ProductGallary)
 admin.site.register(ReviewRating)
+
 # 

@@ -4,7 +4,32 @@
 
 {% block content %}
 
-<!-- ========================= SECTION MAIN ========================= -->
+
+
+<!-- Newsletter Modal -->
+<!-- Newsletter Modal -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+	  <div class="modal-content text-center">
+		<form method="POST" action="">
+		  {% csrf_token %}
+		  <div class="modal-header">
+			<h5 class="modal-title" id="newsletterModalLabel">Subscribe to Our Newsletter</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+		  </div>
+		  <div class="modal-body">
+			<p>Get the latest updates right in your inbox.</p>
+			<input type="email" id="emailInput" name="email" class="form-control mb-3" placeholder="Enter your email" required />
+			<button type="submit" class="btn btn-primary" id="subscribeBtn">Subscribe</button>
+		  </div>
+		</form>
+	  </div>
+	</div>
+  </div>
+  
+
+  
+
 <section class="section-intro padding-y-sm">
 <div class="container">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -118,7 +143,25 @@
 <!-- ========================= SECTION  END// ========================= -->
 
 
-
+<script>
+	$(document).ready(function() {
+	  // Show the modal after 10 seconds
+	  setTimeout(function() {
+		$('#newsletterModal').modal('show');
+	  }, 10000);
+  
+	  // Handle Subscribe button click
+	  $('#subscribeBtn').click(function() {
+		var email = $('#emailInput').val();
+		if (email) {
+		  alert('Thanks for subscribing with: ' + email);
+		  $('#newsletterModal').modal('hide');
+		} else {
+		  alert('Please enter a valid email address.');
+		}
+	  });
+	});
+  </script>
 
 
 </body>

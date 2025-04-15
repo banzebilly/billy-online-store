@@ -111,3 +111,5 @@ def search(request):
     return render(request, 'store/store.html', context)
 
 
+
+
