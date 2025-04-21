@@ -57,8 +57,8 @@
                             </div>
                         {% endif %}
                         <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
-                            <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                            <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
+                            <i class="fa fa-shopping-cart text-primary" style="font-size: 20px;"></i>
+                            <span class="badge badge-warning" id="cart_counter" style="border-radius: 50px; position: relative; bottom:10px; left: -5px;">{{ cart_count }}</span>
                         </a>
                     </div>
                 </div>
