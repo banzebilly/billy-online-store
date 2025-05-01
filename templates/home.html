@@ -9,7 +9,7 @@
 <!-- Newsletter Modal -->
 <!-- Newsletter Modal -->
 <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-dialog modal-dialog-centered shadow">
 	  <div class="modal-content text-center">
 		<form method="POST" action="">
 		  {% csrf_token %}
@@ -31,7 +31,7 @@
   
 
 <section class="section-intro padding-y-sm">
-<div class="container">
+<div class="container shadow">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 		  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -73,11 +73,11 @@
 </header><!-- sect-heading -->
 
 	
-<div class="row">
+<div class="row shadow">
 	{% for product in products %}
 	
-	<div class="col-md-3">
-		<div class="card card-product-grid">
+	<div class="col-md-3 ">
+		<div class="card card-product-grid ">
 			<!--product.get_url is created for to get  single product like we did for category.get_url-->
 			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{product.image.url}}"> </a>
 			<figcaption class="info-wrap">

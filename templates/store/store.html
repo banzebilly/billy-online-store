@@ -25,7 +25,7 @@
 <div class="row">
 	<aside class="col-md-3">
 		
-<div class="card">
+<div class="card shadow">
 	<article class="filter-group">
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
@@ -66,7 +66,7 @@
 <div class="row">
     {% for product in products %}
 	<div class="col-md-4">
-		<figure class="card card-product-grid">
+		<figure class="card card-product-grid ">
 			<div class="img-wrap"> 
 				
 				<a href="{{product.get_url}}"><img src="{{ product.image.url }} "></a> 
@@ -92,7 +92,7 @@
 
 
 
-<nav class="mt-4" aria-label="Page navigation sample">
+<nav class="mt-4 " aria-label="Page navigation sample ">
     <!-- this will help if store page has more product then the previous and next button will show -->
     {% if products.has_other_pages %}
       <ul class="pagination">

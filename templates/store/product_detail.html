@@ -5,10 +5,10 @@
 {% block content %}
 
 <section class="section-content padding-y bg">
-  <div class="container">
+  <div class="container ">
 
   <!-- Product Display -->
-  <div class="card">
+  <div class="card shadow">
     <div class="row no-gutters">
       <aside class="col-md-6">
         <article class="gallery-wrap"> 
@@ -98,7 +98,7 @@
   <br>
 
   <!-- Review Section -->
-  <div class="row">
+  <div class="row shadow">
     <div class="col-md-9">
 
       <form action="{% url 'submit_review' single_product.id %}" method="POST">
@@ -107,7 +107,7 @@
         <div>
           <label>How would you rate this Product?</label>
           <br>
-          <div class="rate">
+          <div class="rate shadow">
             <input type="radio" name="rating" id="rating5" value="5" required/><label for="rating5" title="5"></label>
             <input type="radio" name="rating" id="rating4.5" value="4.5" required/><label for="rating4.5" title="4.5" class="half"></label>
             <input type="radio" name="rating" id="rating4" value="4" required/><label for="rating4" title="4"></label>
@@ -122,10 +122,10 @@
 
           <br>
           Review Title:
-          <input type="text" class="form-control" name="subject">
+          <input type="text" class="form-control shadow" name="subject">
           <br>
           Review:
-          <textarea name="review" rows="4" class="form-control"></textarea>
+          <textarea name="review" rows="4" class="form-control shadow"></textarea>
           <br>
           {% if user.is_authenticated %}
             {% if orderproduct %}
